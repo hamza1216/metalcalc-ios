@@ -1,0 +1,88 @@
+//
+// Prefix header for all source files of the 'ScarpCalc' target in the 'ScarpCalc' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
+
+#import "NSObject+SafePerform.h"
+#import "NSString+NumbersFormats.h"
+#import "ModelManager.h"
+#import "AppDelegate.h"
+#import "AppDelegate_iPad.h"
+#import "MCSplitViewController.h"
+#import "SPLogger.h"
+
+#define FONT_MYRIAD_BOLD(sz)        [UIFont fontWithName:@"MyriadPro-Bold" size:sz]
+#define FONT_MYRIAD_BOLDCOND(sz)    [UIFont fontWithName:@"MyriadPro-BoldCond" size:sz]
+#define FONT_MYRIAD_SEMIBOLD(sz)    [UIFont fontWithName:@"MyriadPro-Semibold" size:sz]
+#define FONT_MYRIAD_REGULAR(sz)     [UIFont fontWithName:@"MyriadPro-Regular" size:sz]
+#define SHADOW_OFFSET               CGSizeMake(0, 2)
+
+#define IS_PORTRAIT(orientation)    UIInterfaceOrientationIsPortrait(orientation)
+#define IS_LANDSCAPE(orientation)   UIInterfaceOrientationIsLandscape(orientation)
+#define IS_ORIENTATION_EQUAL(o1,o2) (IS_PORTRAIT(o1)==IS_PORTRAIT(o2))
+
+#define IS_IPAD                     (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE_5_SCREEN          [[UIScreen mainScreen] bounds].size.height > 500
+
+#define IS_IOS7     [[[UIDevice currentDevice] systemVersion] floatValue] > 6.9
+#define IOS_20      (IS_IOS7 ? 20 : 0)
+
+
+static NSString *const METALS_LIST_SCREEN_NAME        = @"Metals list screen";
+static NSString *const METAL_CALCULATOR_SCREEN_NAME   = @"Metal calculator screen";
+static NSString *const DIAMOND_CALCULATOR_SCREEN_NAME = @"Diamond calculator screen";
+static NSString *const CLIENTS_SCREEN_NAME            = @"Clients screen";
+static NSString *const NEW_CLIENT_SCREEN_NAME         = @"New client screen";
+static NSString *const EDIT_CLIENT_SCREEN_NAME        = @"Edit client screen";
+static NSString *const CLIENT_DETAILS_SCREEN_NAME     = @"Client details screen";
+static NSString *const PURCHASES_SCREEN_NAME          = @"Purchases screen";
+static NSString *const PURCHASE_DETAILS_SCREEN_NAME   = @"Purchase details screen";
+static NSString *const SETTINGS_SCREEN_NAME           = @"Settings screen";
+static NSString *const SETTINGS_HOME_SCREEN_NAME      = @"Settings home screen";
+static NSString *const CUSTOM_ASSAY_SCREEN_NAME       = @"Custom assay adjustment screen";
+static NSString *const GOLD_ASSAY_SCREEN_NAME         = @"Gold assay adjustment screen";
+static NSString *const SILVER_ASSAY_SCREEN_NAME       = @"Silver assay adjustment screen";
+static NSString *const CURRENCY_SCREEN_NAME           = @"Currency screen";
+static NSString *const PUSH_NOTFICATIONS_SCREEN_NAME  = @"Push notifications screen";
+static NSString *const INAPP_PURCHASE_SCREEN_NAME     = @"In-App purchases screen";
+
+NS_INLINE UIColor *
+ColorFromHexFormat(NSInteger hex)
+{
+    NSInteger b = hex & 0xFF;
+    NSInteger g = (hex >> 8) & 0xFF;
+    NSInteger r = (hex >> 16) & 0xFF;
+    return [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0];
+}
+
+typedef NS_ENUM(NSInteger, ViewModeIPad)
+{
+    ViewModeIPadPortrait = 1,
+    ViewModeIPadLandscape,
+    ViewModeIPadFull
+};
+
+typedef void (^AnimationBlock)();
+typedef void (^CompletionBlock)(BOOL);
+
+// --- METALS LIST ---
+
+#define BUY_PRO_MESSAGE     @"Precious Metal Calculator Pro is free to use for 30 days. After 30 days the app will no longer pull live metal prices. Please subscribe to remove ads and unlock full features. Previous Pro users receive 3 months free"
+#define BUY_CALC_MESSAGE    @"Diamond Calculator is available only in full version. Buy the full version for $3.99"
+
+#define APP_ID                      @"0oAbczcUkku92yFHFj7YIA"
+#define INTERSTITIAL_ZONE_ID        @"0457997979193274120"
+#define APP_ID_IPAD                 APP_ID/*@"rk5WhrEfOkSGVkUh8ZSLkQ"*/
+#define INTERSTITIAL_ZONE_ID_IPAD   INTERSTITIAL_ZONE_ID/*@"0452143289052224353"*/
+
+#define INMOBI_APPID                @"807c49bc7e954b1ca974b473a67eec2a"
+
+static double const ONE_MONTH            = 3600 * 24 * 30;
+static double const SIX_MONTH            = 3600 * 24 * 180;
+static double const ONE_YEAR            = 3600 * 24 * 365;
+
+#define USE_INTERSTITIAL_PRE_CACHING 1

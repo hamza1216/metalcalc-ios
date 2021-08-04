@@ -1,0 +1,63 @@
+PODS:
+  - DejalActivityView (1.2)
+  - FMDB (2.6):
+    - FMDB/standard (= 2.6)
+  - FMDB/standard (2.6)
+  - GoogleAnalytics (3.14.0)
+  - GoogleConversionTracking (3.4.0)
+  - GoogleMobileAds (7.6.0)
+  - JSONKit (1.5pre)
+  - MKStoreKit (4.99)
+  - OpenSSL (1.0.208)
+  - PDKeychainBindingsController (0.0.1)
+  - RegexKitLite (4.0)
+  - RMStore (0.7.1):
+    - RMStore/Core (= 0.7.1)
+  - RMStore/AppReceiptVerificator (0.7.1):
+    - OpenSSL (~> 1.0.1)
+    - RMStore/Core
+  - RMStore/Core (0.7.1)
+  - RMStore/KeychainPersistence (0.7.1):
+    - RMStore/Core
+  - RMStore/NSUserDefaultsPersistence (0.7.1):
+    - RMStore/Core
+  - RMStore/TransactionReceiptVerificator (0.7.1):
+    - RMStore/Core
+  - SecureUDID (1.1)
+  - TouchXML (0.1)
+
+DEPENDENCIES:
+  - DejalActivityView (~> 1.2)
+  - FMDB (~> 2.5)
+  - GoogleAnalytics (~> 3.14)
+  - GoogleConversionTracking (~> 3.2)
+  - GoogleMobileAds (~> 7.6)
+  - JSONKit (= 1.5pre)
+  - MKStoreKit (~> 4.99)
+  - OpenSSL (~> 1.0)
+  - PDKeychainBindingsController (~> 0.0)
+  - RegexKitLite (~> 4.0)
+  - RMStore (~> 0.7)
+  - RMStore/AppReceiptVerificator
+  - RMStore/KeychainPersistence
+  - RMStore/NSUserDefaultsPersistence
+  - RMStore/TransactionReceiptVerificator
+  - SecureUDID (~> 1.1)
+  - TouchXML (~> 0.1)
+
+SPEC CHECKSUMS:
+  DejalActivityView: 94d85757728a02cbb32445fcf6dfba17dc1e7393
+  FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
+  GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
+  GoogleConversionTracking: ca8c89abda2bd28bb6472b316eeb4ece9264e279
+  GoogleMobileAds: c2f4d3ef1be73d58ec25158addfde463636433a6
+  JSONKit: bae313ce6a6c444f40489a6c0b023f399888871f
+  MKStoreKit: 748617e5f87ad1e0d3f075155047945248eccefc
+  OpenSSL: b187269d386b07452f56af273764ea0636dd5da8
+  PDKeychainBindingsController: fa8cb3cf99f2ea9240d61066ed0549f34e2cec3c
+  RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
+  RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
+  SecureUDID: 82a9df1f3baa7a0964600ac93a81273121775b17
+  TouchXML: 37089088da5e46f0f4a8797d320fbcfed395ab46
+
+COCOAPODS: 0.39.0
